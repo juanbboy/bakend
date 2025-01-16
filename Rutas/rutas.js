@@ -77,6 +77,7 @@ ruta.post('/regneedle', async (req, res, next) => {
 
   const ingreso = new needle({
     name: req.body.name,
+    reporta: req.body.reporta,
     cod: req.body.cod,
     g09: req.body.g09,
     g05: req.body.g05,

@@ -6,6 +6,9 @@ let needle = new Schema(
         name: {
             type: String,
         },
+        reporta: {
+            type: String,
+        },
         cod: {
             type: Number,
         },
