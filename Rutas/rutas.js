@@ -266,7 +266,7 @@ ruta.post("/send-email", async (req, res) => {
       html: html || "<p>Mensaje enviado desde la app</p>"
     });
 
-    res.status(200).json({ ok: true, msg: "Email enviado" });
+    res.status(200).json({ ok: true, msg: "Email enviado con exito" });
   } catch (error) {
     console.error(error);
     res.status(500).json({ ok: false, msg: "Error al enviar email" });
