@@ -23,11 +23,14 @@ app.use(
     extended: false,
   })
 );
+require("dotenv").config();
+
 
 const user = 'juanbboy';
 const password = 'Alejitah.1';
 const db = 'DataBase';
 const url = `mongodb+srv://${user}:${password}@cluster0.whlgo.mongodb.net/${db}?retryWrites=true&w=majority`
+
 
 mongoose.connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(db => console.log('Base de datos conectada'))
