@@ -241,37 +241,37 @@ ruta.post("/login", async (req, res) => {
   })
 })
 
-const nodemailer = require("nodemailer");
-require("dotenv").config();
+// const nodemailer = require("nodemailer");
+// require("dotenv").config();
 
-const transporter = nodemailer.createTransport({
-  host: process.env.EMAIL_HOST,
-  port: Number(process.env.EMAIL_PORT),
-  secure: process.env.EMAIL_SECURE === "true",
-  auth: {
-    user: process.env.EMAIL_USER,
-    pass: process.env.EMAIL_PASS
-  }
-});
+// const transporter = nodemailer.createTransport({
+//   host: process.env.EMAIL_HOST,
+//   port: Number(process.env.EMAIL_PORT),
+//   secure: process.env.EMAIL_SECURE === "true",
+//   auth: {
+//     user: process.env.EMAIL_USER,
+//     pass: process.env.EMAIL_PASS
+//   }
+// });
 
-ruta.post("/send-email", async (req, res) => {
-  const { to, subject, text, html } = req.body;
+// ruta.post("/send-email", async (req, res) => {
+//   const { to, subject, text, html } = req.body;
 
-  try {
-    await transporter.sendMail({
-      from: `"Registro Daño" <${process.env.EMAIL_USER}>`,
-      to: to || process.env.EMAIL_TO,
-      subject: subject || "Notificación",
-      text: text || "Mensaje enviado desde la app",
-      html: html || "<p>Mensaje enviado desde la app</p>"
-    });
+//   try {
+//     await transporter.sendMail({
+//       from: `"Registro Daño" <${process.env.EMAIL_USER}>`,
+//       to: to || process.env.EMAIL_TO,
+//       subject: subject || "Notificación",
+//       text: text || "Mensaje enviado desde la app",
+//       html: html || "<p>Mensaje enviado desde la app</p>"
+//     });
 
-    res.status(200).json({ ok: true, msg: "Email enviado con exito" });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ ok: false, msg: "Error al enviar email" });
-  }
-});
+//     res.status(200).json({ ok: true, msg: "Email enviado con exito" });
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ ok: false, msg: "Error al enviar email" });
+//   }
+// });
 
 
 
